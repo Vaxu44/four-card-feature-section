@@ -1,0 +1,146 @@
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  --grey-500: hsl(234, 12%, 34%);
+  --grey-400: hsl(212, 6%, 44%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  color: var(--grey-500);
+  display: flex;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+}
+
+.container {
+  max-width: 1110px;
+}
+
+.hero {
+  text-align: center;
+  max-width: 540px;
+  margin: 0 auto 4rem;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-weight: 200;
+  line-height: 1.4;
+  color: var(--grey-400);
+}
+
+.hero h1 span {
+  display: block;
+  font-weight: 600;
+  color: var(--grey-500);
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--grey-400);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.middle-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 15px 30px rgba(131, 166, 210, 0.3);
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.supervisor::before {
+  background-color: var(--cyan);
+}
+
+.team-builder::before {
+  background-color: var(--red);
+}
+
+.karma::before {
+  background-color: var(--orange);
+}
+
+.calculator::before {
+  background-color: var(--blue);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.8125rem;
+  line-height: 1.8;
+  color: var(--grey-400);
+}
+
+.card img {
+  display: block;
+  margin-left: auto;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    margin-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 4rem 2rem;
+  }
+
+  .card {
+    min-height: auto;
+  }
+}
